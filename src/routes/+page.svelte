@@ -1,12 +1,14 @@
 <script>
-	import { css } from 'styled-system/css';
+	import { grid } from 'styled-system/patterns';
 </script>
 
 <div
-	class={css({
+	class={grid({
 		fontSize: '2xl',
-		fontWeight: 'bold'
+		fontWeight: 'bold',
+		placeContent: 'center',
+		h: 'screen'
 	})}
 >
-	Hello 🐼!
+	{'🐧 < Hello'}
 </div>

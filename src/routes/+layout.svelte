@@ -35,7 +35,7 @@
 			backgroundPositionY: '50%',
 			height: 'inherit',
 			filter: 'invert(100%)',
-			maskImage: 'radial-gradient(ellipse at 100% 0%, black 40%, transparent 70%)',
+			maskImage: 'radial-gradient(ellipse at 100% 0%, black 30%, transparent 70%)',
 			pointerEvents: 'none',
 			animationName: 'jumbo',
 			animationDuration: '90s',

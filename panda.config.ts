@@ -29,7 +29,7 @@ export default defineConfig({
 					},
 					rainbow: {
 						value:
-							'repeating-linear-gradient(100deg, #60a5fa 10%, #e879f9 16%, #5eead4 22%, #60a5fa 30%)'
+							'repeating-linear-gradient(100deg, #60a5fa 10%, #ddd6fe 16%, #5eead4 22%, #60a5fa 30%)'
 					}
 				}
 			}
