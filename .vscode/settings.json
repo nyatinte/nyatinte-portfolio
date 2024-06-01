@@ -1,0 +1,17 @@
+{
+	/* TypeScript */
+	"typescript.tsdk": "node_modules/typescript/lib",
+	/* Format */
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit"
+	},
+	/* SvelteKit */
+	"workbench.editor.customLabels.patterns": {
+		"**/routes/**/+page.svelte": "${dirname} [Page]",
+		"**/routes/**/+page.server.svelte": "${dirname} [Page Server]",
+		"**/routes/**/+layout.svelte": "${dirname} [Layout]"
+	},
+	"editor.linkedEditing": true
+}

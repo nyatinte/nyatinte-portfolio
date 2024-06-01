@@ -1,0 +1,40 @@
+name: Check Pull Request
+
+on:
+  pull_request:
+
+jobs:
+  svelte-check:
+    timeout-minutes: 5
+    name: Svelte Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v1
+      - run: bun install
+      # about --output → https://arc.net/l/quote/vqhznozd
+      - run: bun check --output machine-verbose
+
+  lint:
+    timeout-minutes: 5
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v1
+      - run: bun install
+      - run: bun lint
+
+  test:
+    timeout-minutes: 5
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v1
+      - run: bun install
+      - run: bun test
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
