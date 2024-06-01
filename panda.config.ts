@@ -11,5 +11,28 @@ export default defineConfig({
 	exclude: [],
 
 	// The output directory for your css system
-	outdir: 'styled-system'
+	outdir: 'styled-system',
+
+	theme: {
+		extend: {
+			keyframes: {
+				jumbo: {
+					'0%': { backgroundPosition: '50% 50%' },
+					'100%': { backgroundPosition: '350% 50%' }
+				}
+			},
+			tokens: {
+				gradients: {
+					stripe: {
+						value:
+							'repeating-linear-gradient(100deg, #fff 0%, #fff 7%, transparent 10%, transparent 12%, #fff 16%)'
+					},
+					rainbow: {
+						value:
+							'repeating-linear-gradient(100deg, #60a5fa 10%, #e879f9 16%, #5eead4 22%, #60a5fa 30%)'
+					}
+				}
+			}
+		}
+	}
 });
