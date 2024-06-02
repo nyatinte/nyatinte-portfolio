@@ -67,7 +67,7 @@
 	{#each Array(10) as _}
 		{@const posX = Math.random() * 100}
 		{@const delay = Math.random() * 10}
-		{@const duration = Math.random() * 10 + 5}
+		{@const duration = Math.random() * 10 + 10}
 
 		<div
 			class={css({
