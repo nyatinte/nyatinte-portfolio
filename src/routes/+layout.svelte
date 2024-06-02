@@ -55,4 +55,34 @@
 	></div>
 </div>
 
+<div
+	class={css({
+		pos: 'absolute',
+		top: '50%',
+		w: 'full',
+		h: 'full',
+		transform: 'translateY(-50%)'
+	})}
+>
+	{#each Array(10) as _}
+		{@const posX = Math.random() * 100}
+		{@const delay = Math.random() * 10}
+		{@const duration = Math.random() * 10 + 5}
+
+		<div
+			class={css({
+				pos: 'absolute',
+				w: '150px',
+				h: '150px',
+				borderRadius: '46% 54% 40% 60% / 46% 41% 59% 54%',
+				boxShadow: '0 0 10px white inset',
+				transform: 'translateY(-100%)',
+				animationName: 'bubbleUp',
+				animationIterationCount: 'infinite'
+			})}
+			style={`left: ${posX}%; animation-delay: ${delay}s; animation-duration: ${duration}s;`}
+		></div>
+	{/each}
+</div>
+
 {@render children()}

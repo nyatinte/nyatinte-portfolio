@@ -19,6 +19,14 @@ export default defineConfig({
 				jumbo: {
 					'0%': { backgroundPosition: '50% 50%' },
 					'100%': { backgroundPosition: '350% 50%' }
+				},
+				bubbleUp: {
+					'0%': { transform: 'translateY(100vh)', scale: 1, opacity: 0.5 },
+					'100%': {
+						transform: 'translateY(- calc(100vh + 100%) )',
+						scale: 0.5,
+						opacity: 0.2
+					}
 				}
 			},
 			tokens: {
