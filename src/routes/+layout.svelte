@@ -61,7 +61,8 @@
 		top: '50%',
 		w: 'full',
 		h: 'full',
-		transform: 'translateY(-50%)'
+		transform: 'translateY(-50%)',
+		overflow: 'hidden'
 	})}
 >
 	{#each Array(10) as _}
