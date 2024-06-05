@@ -12,63 +12,60 @@
 
 <div
 	class={css({
-		pos: 'absolute',
-		display: 'flex',
-		flexDir: 'column',
-		zIndex: 40,
-		w: 'full',
-		alignItems: 'center',
-		justifyContent: 'center',
-		bg: 'transparent',
-		transition: 'background',
+		pos: 'relative',
+		minW: '100vw',
+		minH: '100vh',
 		overflow: 'hidden'
 	})}
 >
 	<div
 		class={css({
-			opacity: 0.6,
-			contain: 'strict',
-			containIntrinsicSize: '100vw 40vh',
-			backgroundImage: 'token(gradients.stripe), token(gradients.rainbow)',
-			backgroundSize: '300%, 200%',
-			backgroundPositionX: '50%',
-			backgroundPositionY: '50%',
-			height: 'inherit',
-			filter: 'invert(100%)',
-			maskImage: 'radial-gradient(ellipse at 100% 0%, black 30%, transparent 70%)',
-			pointerEvents: 'none',
-			animationName: 'jumbo',
-			animationDuration: '90s',
-			animationTimingFunction: 'linear',
-			animationIterationCount: 'infinite',
-			_after: {
-				content: '""',
-				position: 'absolute',
-				inset: 0,
-				backgroundImage: 'token(gradients.stripe), token(gradients.rainbow)',
-				backgroundSize: '200%, 100%',
-				backgroundAttachment: 'fixed',
-				mixBlendMode: 'difference',
-				animationName: 'jumbo'
-			}
+			pos: 'absolute',
+			display: 'flex',
+			flexDir: 'column',
+			zIndex: '-1',
+			w: 'full',
+			alignItems: 'center',
+			justifyContent: 'center',
+			bg: 'transparent',
+			transition: 'background'
 		})}
-	></div>
-</div>
-
-<div
-	class={css({
-		pos: 'absolute',
-		top: '50%',
-		w: 'full',
-		h: 'full',
-		transform: 'translateY(-50%)',
-		overflow: 'hidden'
-	})}
->
+	>
+		<div
+			class={css({
+				opacity: 0.6,
+				contain: 'strict',
+				containIntrinsicSize: '100vw 40vh',
+				backgroundImage: 'token(gradients.stripe), token(gradients.rainbow)',
+				backgroundSize: '300%, 200%',
+				backgroundPositionX: '50%',
+				backgroundPositionY: '50%',
+				height: 'inherit',
+				filter: 'invert(100%)',
+				maskImage: 'radial-gradient(ellipse at 100% 0%, black 30%, transparent 70%)',
+				pointerEvents: 'none',
+				animationName: 'jumbo',
+				animationDuration: '90s',
+				animationTimingFunction: 'linear',
+				animationIterationCount: 'infinite',
+				_after: {
+					content: '""',
+					position: 'absolute',
+					inset: 0,
+					backgroundImage: 'token(gradients.stripe), token(gradients.rainbow)',
+					backgroundSize: '200%, 100%',
+					backgroundAttachment: 'fixed',
+					mixBlendMode: 'difference',
+					animationName: 'jumbo'
+				}
+			})}
+		></div>
+	</div>
 	{#each Array(10) as _}
 		{@const posX = Math.random() * 100}
 		{@const delay = Math.random() * 10}
 		{@const duration = Math.random() * 10 + 10}
+		{@const z = [-1, 1][Math.floor(Math.random() * 2)]}
 
 		<div
 			class={css({
@@ -81,9 +78,9 @@
 				animationName: 'bubbleUp',
 				animationIterationCount: 'infinite'
 			})}
-			style={`left: ${posX}%; animation-delay: ${delay}s; animation-duration: ${duration}s;`}
+			style={`left: ${posX}%; animation-delay: ${delay}s; animation-duration: ${duration}s; z-index: ${z};`}
 		></div>
 	{/each}
-</div>
 
-{@render children()}
+	{@render children()}
+</div>
