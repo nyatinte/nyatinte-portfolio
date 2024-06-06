@@ -27,6 +27,18 @@ export default defineConfig({
 						scale: 0.5,
 						opacity: 0.2
 					}
+				},
+				glow: {
+					'0%': {
+						backgroundPosition: '0 0'
+					},
+					'50%': {
+						backgroundPosition: '100% 0'
+					},
+
+					'100%': {
+						backgroundPosition: '0 0'
+					}
 				}
 			},
 			tokens: {
