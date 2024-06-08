@@ -1,5 +1,10 @@
 {
 	"name": "nyatinte",
+	"author": {
+		"name": "Nyatinte",
+		"email": "takumi.062757@gmail.com",
+		"url": "https://nyatinte.pages.dev"
+	},
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
