@@ -22,7 +22,7 @@ jobs:
         with:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          projectName: sveltekit-nyatinte
+          projectName: nyatinte
           branch: main
           directory: .svelte-kit/cloudflare
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
