@@ -13,5 +13,6 @@
 		"**/routes/**/+page.server.svelte": "${dirname} [Page Server]",
 		"**/routes/**/+layout.svelte": "${dirname} [Layout]"
 	},
-	"editor.linkedEditing": true
+	"editor.linkedEditing": true,
+	"cSpell.words": ["Nyatinte"]
 }
