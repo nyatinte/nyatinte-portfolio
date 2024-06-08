@@ -1,2 +1,2 @@
-name = "sveltekit-nyatinte"
+name = "nyatinte"
 pages_build_output_dir = ".svelte-kit/cloudflare"
