@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { css } from 'styled-system/css';
 	import Avatar from '$lib/components/ui/Avatar.svelte';
-	import { center, flex } from 'styled-system/patterns';
+	import { center, flex, stack } from 'styled-system/patterns';
 	import GitHubIcon from '$lib/components/ui/icon/GitHubIcon.svelte';
 	import XIcon from '$lib/components/ui/icon/XIcon.svelte';
 	import ZennIcon from '$lib/components/ui/icon/ZennIcon.svelte';
@@ -31,9 +31,9 @@
 	];
 </script>
 
-<main class={css({ p: '16' })}>
+<main class={stack({ p: '16', gap: '8' })}>
 	<div class={center()}>
-		<Avatar src="/nyatinte.png" alt="Nyatinte Avatar" size={32} />
+		<Avatar src="/nyatinte.png" alt="Nyatinte Avatar" size={'64'} />
 	</div>
 	<h1 class={css({ fontSize: '4xl', textAlign: 'center', color: 'white', fontWeight: 'bold' })}>
 		Nyatinte

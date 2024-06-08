@@ -1,14 +1,15 @@
 <script lang="ts">
 	import { scale } from 'svelte/transition';
 	import OnMount from '../utils/OnMount.svelte';
-	import { circle, type CircleProperties } from 'styled-system/patterns';
+	import { circle } from 'styled-system/patterns';
 	import { createAvatar, melt } from '@melt-ui/svelte';
 	import { elasticOut } from 'svelte/easing';
+	import { token, type SizeToken } from 'styled-system/tokens';
 
 	type Props = {
 		src: string;
 		alt: string;
-		size: CircleProperties['size'];
+		size: SizeToken;
 	};
 
 	const { src, alt, size }: Props = $props();
@@ -24,7 +25,6 @@
 	<div
 		transition:scale={{ duration: 1000, opacity: 0.5, start: 0.5, easing: elasticOut }}
 		class={circle({
-			size,
 			pos: 'relative',
 			_after: {
 				content: '""',
@@ -41,7 +41,8 @@
 				w: 'full'
 			}
 		})}
+		style:width={token.var(`sizes.${size}`)}
 	>
-		<img use:melt={$image} {alt} class={circle({ p: 1, size })} />
+		<img use:melt={$image} {alt} class={circle({ p: 1 })} />
 	</div>
 </OnMount>
