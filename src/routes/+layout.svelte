@@ -3,6 +3,8 @@
 
 	import '../app.css';
 	import type { Snippet } from 'svelte';
+	import Bubble from '$lib/components/layouts/Bubble.svelte';
+	import Ray from '$lib/components/layouts/Ray.svelte';
 
 	type Props = {
 		children: Snippet;
@@ -18,69 +20,8 @@
 		overflow: 'hidden'
 	})}
 >
-	<div
-		class={css({
-			pos: 'absolute',
-			display: 'flex',
-			flexDir: 'column',
-			zIndex: '-1',
-			w: 'full',
-			alignItems: 'center',
-			justifyContent: 'center',
-			bg: 'transparent',
-			transition: 'background'
-		})}
-	>
-		<div
-			class={css({
-				opacity: 0.6,
-				contain: 'strict',
-				containIntrinsicSize: '100vw 40vh',
-				backgroundImage: 'token(gradients.stripe), token(gradients.rainbow)',
-				backgroundSize: '300%, 200%',
-				backgroundPositionX: '50%',
-				backgroundPositionY: '50%',
-				height: 'inherit',
-				filter: 'invert(100%)',
-				maskImage: 'radial-gradient(ellipse at 100% 0%, black 30%, transparent 70%)',
-				pointerEvents: 'none',
-				animationName: 'jumbo',
-				animationDuration: '90s',
-				animationTimingFunction: 'linear',
-				animationIterationCount: 'infinite',
-				_after: {
-					content: '""',
-					position: 'absolute',
-					inset: 0,
-					backgroundImage: 'token(gradients.stripe), token(gradients.rainbow)',
-					backgroundSize: '200%, 100%',
-					backgroundAttachment: 'fixed',
-					mixBlendMode: 'difference',
-					animationName: 'jumbo'
-				}
-			})}
-		></div>
-	</div>
-	{#each Array(10) as _}
-		{@const posX = Math.random() * 100}
-		{@const delay = Math.random() * 10}
-		{@const duration = Math.random() * 10 + 10}
-		{@const z = [-1, 1][Math.floor(Math.random() * 2)]}
-
-		<div
-			class={css({
-				pos: 'absolute',
-				w: '150px',
-				h: '150px',
-				borderRadius: '46% 54% 40% 60% / 46% 41% 59% 54%',
-				boxShadow: '0 0 10px white inset',
-				transform: 'translateY(-100%)',
-				animationName: 'bubbleUp',
-				animationIterationCount: 'infinite'
-			})}
-			style={`left: ${posX}%; animation-delay: ${delay}s; animation-duration: ${duration}s; z-index: ${z};`}
-		></div>
-	{/each}
+	<Ray />
+	<Bubble count={10} />
 
 	{@render children()}
 </div>
