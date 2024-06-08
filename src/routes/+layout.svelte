@@ -12,6 +12,11 @@
 	const { children }: Props = $props();
 </script>
 
+<svelte:head>
+	<title>Nyatinte Portfolio</title>
+	<meta name="description" content="Nyatinte Portfolio" />
+</svelte:head>
+
 <div
 	class={css({
 		pos: 'relative',
