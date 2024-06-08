@@ -33,11 +33,7 @@
 
 <main class={css({ p: '16' })}>
 	<div class={center()}>
-		<Avatar
-			src="https://avatars.githubusercontent.com/u/104000239?v=4"
-			alt="Nyatinte Avatar"
-			size={32}
-		/>
+		<Avatar src="/nyatinte.png" alt="Nyatinte Avatar" size={32} />
 	</div>
 	<h1 class={css({ fontSize: '4xl', textAlign: 'center', color: 'white', fontWeight: 'bold' })}>
 		Nyatinte
