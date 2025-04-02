@@ -21,11 +21,13 @@ export default defineConfig({
 					'100%': { backgroundPosition: '350% 50%' }
 				},
 				bubbleUp: {
-					'0%': { transform: 'translateY(100vh)', scale: 1, opacity: 0.5 },
+					'0%': {
+						transform: 'translateY(100vh) scale(1)',
+						opacity: 0.5
+					},
 					'100%': {
-						transform: 'translateY(- calc(100vh + 100%) )',
-						scale: 0.5,
-						opacity: 0.2
+						transform: 'translateY(-120%) scale(0.5)',
+						opacity: 0
 					}
 				},
 				glow: {
