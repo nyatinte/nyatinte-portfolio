@@ -5,11 +5,11 @@
 	import GitHubIcon from '$lib/components/ui/icon/GitHubIcon.svelte';
 	import XIcon from '$lib/components/ui/icon/XIcon.svelte';
 	import ZennIcon from '$lib/components/ui/icon/ZennIcon.svelte';
-	import type { Component } from 'svelte';
+	import type { ComponentType } from 'svelte';
 
 	type SNSLink = {
 		path: string;
-		Icon: Component<{ size: number | string }>;
+		Icon: ComponentType;
 		id: string;
 	};
 	const snsLinks: SNSLink[] = [

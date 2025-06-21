@@ -8,7 +8,7 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"prepare": "panda codegen",
+		"prepare": "svelte-kit sync && panda codegen",
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
