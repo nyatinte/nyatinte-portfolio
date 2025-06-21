@@ -48,7 +48,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ### ディレクトリ構造
 
-```
+```text
 src/
 ├── routes/          # SvelteKit ルーティング
 │   ├── (redirect)/  # リダイレクト用グループ
@@ -83,6 +83,7 @@ src/
 ## コミットルール
 
 コミット前にgit logで過去のメッセージパターンを学習すること：
+
 - `feat:` - 新機能追加
 - `fix:` - バグ修正
 - `chore:` - 設定変更・雑務
