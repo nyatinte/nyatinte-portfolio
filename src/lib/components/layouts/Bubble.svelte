@@ -8,7 +8,7 @@
 	const { count }: Props = $props();
 </script>
 
-{#each Array(count) as _}
+{#each Array(count) as _ignored}
 	{@const posX = Math.random() * 100}
 	{@const delay = Math.random() * 10}
 	{@const duration = Math.random() * 10 + 10}

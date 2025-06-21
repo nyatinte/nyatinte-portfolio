@@ -4,7 +4,7 @@
 		class?: string;
 	};
 
-	const { size = 24, class: className }: Props = $props();
+	const { size = 24, class: _className }: Props = $props();
 </script>
 
 <svg
@@ -15,6 +15,7 @@
 	height={size}
 	viewBox={`0 0 88.3 88.3`}
 	xml:space="preserve"
+	class={_className}
 >
 	<g fill="currentColor">
 		<path
