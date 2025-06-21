@@ -8,7 +8,7 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"prepare": "svelte-kit sync && panda codegen",
+		"prepare": "svelte-kit sync && panda codegen && lefthook install",
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
@@ -23,6 +23,7 @@
 	},
 	"devDependencies": {
 		"@melt-ui/pp": "^0.3.2",
+		"lefthook": "^1.11.14",
 		"@melt-ui/svelte": "^0.81.0",
 		"@pandacss/dev": "^0.39.1",
 		"@pandacss/eslint-plugin": "^0.1.5",
