@@ -1,0 +1,29 @@
+pre-push:
+  parallel: true
+  commands:
+    type-check:
+      run: pnpm run check
+      stage_fixed: false
+
+    lint:
+      run: pnpm run lint
+      stage_fixed: false
+
+    build:
+      run: pnpm run build
+      stage_fixed: false
+
+    test:
+      run: pnpm run test
+      stage_fixed: false
+
+commit-msg:
+  commands:
+    conventional-commit:
+      run: |
+        if ! echo "$1" | grep -qE "^(feat|fix|docs|style|refactor|test|chore)(\\(.+\\))?: .{1,50}"; then
+          echo "❌ Commit message must follow conventional format:"
+          echo "   <type>(<scope>): <description>"
+          exit 1
+        fi
+      stage_fixed: false
